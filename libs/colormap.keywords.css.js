@@ -27,7 +27,8 @@ console.log('color-keywords shorter than color-hex',result.join());//olive,green
 */
 var colors={
  pattern={
-	keywords_shorter_than_hex:'olive|green|navy|teal|gray',
+	keywords_shorter_than_hex:/olive|green|navy|teal|gray/i,
+	hex = /^#?([0-9a-f]{6})$/i,
  },
  map={
 	keyword:{
