@@ -1,6 +1,7 @@
 //autore:fabiovergani
 var colors={
  pattern:{
+
 	names:{
 		recognizable:{
 			system:/((active(border|caption))|(button(face|highlight|shadow|text))|(inactive(border|caption))|(highlight|menu|scrollbar|appworkspace)|((highlight|caption|gray|inactivecaption|menu|window|info)text)|(window(frame)?)|((info)?background)|(threed(face|(dark|light)?shadow)))/i,
@@ -11,10 +12,16 @@ var colors={
 		shortThanHex:/(navy|teal|olive|g(ray|reen))/i,
 		optimizableLength:/(red|lime|aqua|b(lue|lack)|white|yellow|fuchsia)/i,//basic&optimizable name-max-length:7chr
 	},
+
 	syntax:{
 		hex:/^#?([0-9a-f]{6})$/i,
+		rgbx:/^rgb(a)?\(((\d\d?|1\d{1,2}|2[0-4]\d|25[0-5])\s*(,\s*)?){3}(\s*([01]?\.?\d*?))\)/i,//rgb&rgba
+/todo:hsl|hsla/
 	}
+
  },
+
+
 //§
  map:{
 		names2hexShort:{
@@ -60,19 +67,6 @@ css-pyramid:
 
 //§utils
 function ShrinkHex(s){var i=s,a=i[0],b=i[2],c=i[4];return(a===i[1] && b===i[3] && c===i[5])?[a,b,c].join(''):i;};
-
-
-
-/*
-
-			valueObjects: [
-				'rgba',
-				'hsl',
-				'hsla'
-			]
-*/
-/*
-keyword2
 
 
 
@@ -148,20 +142,4 @@ darkmagenta:'8b008b',magenta:'ff00ff',
 darkslategray:'2f4f4f',slategray:'708090',darkgray:'a9a9a9',gray:'808080',
 darkslateblue:'483d8b',slateblue:'6a5acd',darkblue:'00008b',blue:'0000ff'
 }
-*/
-
-/*
-var );
-console.log(m.join('|'));
-var m=Object.keys(colors.map.names2hexLong);
-m.sort(function(a,b){return  a.length - b.length;});
-console.log('(',m.join('|'),')');
-//
-recognizable unsafe
-var c,p,result=[],o=colors.map.names2hexLong;
-for(p in o){
-c=ShrinkHex(o[p]);
-if(c.length<4){result[result.length]=[p,':\'',c,'\''].join('');};
-};
-console.log(result.join());
 */
